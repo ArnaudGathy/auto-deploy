@@ -1,14 +1,16 @@
 import { github } from "../constants/github";
-import { runInNewContext } from "vm";
 
 export const validatePush = (req, res, next) => {
-  const {body} = req
+  const {body: { repository, pusher }} = req
 
-  if(body.repository && !body.pusher) {
+  if(repository && !pusher) {
     console.log("Not push but OK")
     return res.sendStatus(200)
   }
-  if(github.user !== body.pusher.name || !github.repositories.find(({name}) => name === body.repository.name)) {
+
+  const repo = github.repositories.find(({name}) => name === repository.name)
+
+  if(!repo || !repo.users.includes(pusher.name)) {
     console.log("Unauthorized")
     return res.sendStatus(401)
   }

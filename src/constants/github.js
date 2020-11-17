@@ -1,6 +1,6 @@
 export const github = {
-  user: "ArnaudGathy",
   repositories: [{
+    users: ['ArnaudGathy', 'curzolapierre'],
     name: "discord-bot",
     path: "~/apps/discord-bot",
   }]

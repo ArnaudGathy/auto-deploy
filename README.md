@@ -1,2 +1,2 @@
 # auto-deploy
-Autonomous deployment server
+Autonomous deployment REST API for my Raspberry Pi
