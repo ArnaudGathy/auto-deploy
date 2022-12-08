@@ -13,7 +13,7 @@
     "pm2:setup": "pm2 start build/index.js --name \"auto-deploy\" && pm2 stop auto-deploy"
   },
   "dependencies": {
-    "express": "4.16.3",
+    "express": "4.17.3",
     "express-promise-router": "3.0.3",
     "body-parser": "1.18.3"
   },
